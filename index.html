@@ -11,13 +11,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="app" class="app-shell">
+  <section id="access-gate" class="access-gate" aria-live="polite">
+    <div id="access-gate-content" class="access-gate-card"></div>
+  </section>
+  <div id="app" class="app-shell" hidden>
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark">د</div>
         <div><div class="brand-name">دفتر حساب</div><div class="brand-sub" id="workspace-caption">مدیریت فروش و حساب مشتریان</div></div>
       </div>
-      <button class="icon-btn" id="quick-add" aria-label="ثبت سریع" title="ثبت سریع">＋</button>
+      <div class="top-actions"><button class="icon-btn back-btn" id="back-page" aria-label="بازگشت به صفحه قبل" title="بازگشت">←</button><button class="icon-btn" id="quick-add" aria-label="ثبت سریع" title="ثبت سریع">＋</button></div>
     </header>
 
     <main id="main" class="main-content" tabindex="-1"></main>
@@ -34,6 +37,8 @@
   <div id="modal-root"></div>
   <div id="toast-root" aria-live="polite"></div>
   <input id="restore-file" type="file" accept=".json,application/json" hidden>
+  <script src="firebase-config.js"></script>
+  <script src="firebase-cloud.js"></script>
   <script src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
